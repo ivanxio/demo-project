@@ -5,10 +5,10 @@
  * Copyright: Secretaria de Comunicaciones y Transporte. 2017
  */
 /**
- * This package must contains the controllers class.
+ * This package must contains the filters classes.
  *
  * @author Ivan Garcia &lt;ivan.garcia@neixar.com.mx&gt;
  * @version 1.0.0
  * @since 1.0.0
  */
-package com.sct.utic.controller;
+package com.sct.utic.controller.filter;

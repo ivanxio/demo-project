@@ -4,7 +4,7 @@
  *      Date: Feb 28, 2019
  * Copyright: Secretaria de Comunicaciones y Transporte. 2017
  */
-package com.sct.utic.controller;
+package com.sct.utic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
