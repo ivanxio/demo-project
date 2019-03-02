@@ -22,8 +22,7 @@ public class DemoProjectApplication {
     /**
      * Starts the application.
      *
-     * @param args
-     *            The command line arguments.
+     * @param args The command line arguments.
      */
     public static void main(final String[] args) {
         SpringApplication.run(DemoProjectApplication.class, args);

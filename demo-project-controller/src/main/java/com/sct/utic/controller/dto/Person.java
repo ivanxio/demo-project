@@ -4,7 +4,7 @@
  *      Date: Feb 28, 2019
  * Copyright: Secretaria de Comunicaciones y Transporte. 2019
  */
-package com.sct.utic.controller;
+package com.sct.utic.controller.dto;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -57,8 +57,7 @@ public class Person implements Serializable {
      * @param birthday The person birthday.
      * @param active It indicate whether the person is active.
      */
-    public Person(final Long id, final String name, final String lastName,
-            final Date birthday, final Boolean active) {
+    public Person(final Long id, final String name, final String lastName, final Date birthday, final Boolean active) {
         super();
         this.id = id;
         this.name = name;
@@ -167,11 +166,9 @@ public class Person implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((active == null) ? 0 : active.hashCode());
-        result = prime * result
-                + ((birthday == null) ? 0 : birthday.hashCode());
+        result = prime * result + ((birthday == null) ? 0 : birthday.hashCode());
         result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result
-                + ((lastName == null) ? 0 : lastName.hashCode());
+        result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         return result;
     }
@@ -238,8 +235,6 @@ public class Person implements Serializable {
      */
     @Override
     public String toString() {
-        return String.format(
-                "Person [id=%s, name=%s, lastName=%s, birthday=%s, active=%s]",
-                id, name, lastName, birthday, active);
+        return String.format("Person [id=%s, name=%s, lastName=%s, birthday=%s, active=%s]", id, name, lastName, birthday, active);
     }
 }
