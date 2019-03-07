@@ -36,7 +36,7 @@ public class Person {
     @Column(name = "last_name", nullable = false)
     private String lastName;
     /** The customer years old. */
-    @Column(name = "birthday", nullable = false)
+    @Column(name = "birthday",  nullable = false)
     private Date birthday;
     /** It indicates whether the customer is active. **/
     @Column(name = "active", nullable = false)
@@ -51,15 +51,13 @@ public class Person {
     /**
      * Create a new instance of {@link Person}.
      *
-     * @param id The person identifier.
      * @param name The person name.
      * @param lastName The person last name.
      * @param birthday The person birthday.
      * @param active It indicate whether the person is active.
      */
-    public Person(final Long id, final String name, final String lastName, final Date birthday, final Boolean active) {
+    public Person(final String name, final String lastName, final Date birthday, final Boolean active) {
         super();
-        this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.birthday = (Date) birthday.clone();

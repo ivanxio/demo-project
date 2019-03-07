@@ -1,5 +1,5 @@
 /*
- *      File: Person.java
+ *      File: PersonDTO.java
  *    Author: Ivan Garcia <ivan.garcia@neixar.com.mx>
  *      Date: Feb 28, 2019
  * Copyright: Secretaria de Comunicaciones y Transporte. 2019
@@ -16,7 +16,7 @@ import java.util.Date;
  * @version 1.0.0
  * @since 1.0.0
  */
-public class Person implements Serializable {
+public class PersonDTO implements Serializable {
 
     /** The serial version UID. */
     private static final long serialVersionUID = 5550982393985283154L;
@@ -42,14 +42,14 @@ public class Person implements Serializable {
     private Boolean active;
 
     /**
-     * Create a new instance of {@link Person}.
+     * Create a new instance of {@link PersonDTO}.
      */
-    public Person() {
+    public PersonDTO() {
 
     }
 
     /**
-     * Create a new instance of {@link Person}.
+     * Create a new instance of {@link PersonDTO}.
      *
      * @param id The person identifier.
      * @param name The person name.
@@ -57,7 +57,7 @@ public class Person implements Serializable {
      * @param birthday The person birthday.
      * @param active It indicate whether the person is active.
      */
-    public Person(final Long id, final String name, final String lastName, final Date birthday, final Boolean active) {
+    public PersonDTO(final Long id, final String name, final String lastName, final Date birthday, final Boolean active) {
         super();
         this.id = id;
         this.name = name;
@@ -189,7 +189,7 @@ public class Person implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Person other = (Person) obj;
+        final PersonDTO other = (PersonDTO) obj;
         if (active == null) {
             if (other.active != null) {
                 return false;
@@ -235,6 +235,6 @@ public class Person implements Serializable {
      */
     @Override
     public String toString() {
-        return String.format("Person [id=%s, name=%s, lastName=%s, birthday=%s, active=%s]", id, name, lastName, birthday, active);
+        return String.format("PersonDTO [id=%s, name=%s, lastName=%s, birthday=%s, active=%s]", id, name, lastName, birthday, active);
     }
 }

@@ -226,7 +226,7 @@
 		<profile>
 			<id>env-dev</id>
 			<properties>
-				<postgres.host>produccion</postgres.host>
+				<postgres.host>localhost</postgres.host>
 				<postgres.puerto>5432</postgres.puerto>
 				<postgres.database>demo</postgres.database>
 				<postgres.schema>demo</postgres.schema>
@@ -238,7 +238,7 @@
 		<profile>
 			<id>env-qa</id>
 			<properties>
-				<postgres.host>qa</postgres.host>
+				<postgres.host>localhost</postgres.host>
 				<postgres.puerto>5432</postgres.puerto>
 				<postgres.database>demo</postgres.database>
 				<postgres.schema>demo</postgres.schema>
