@@ -13,6 +13,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -25,13 +26,14 @@ import javax.persistence.Table;
  * @since 1.0.0
  */
 @Entity
-@Table(name = "country")
+@Table(name = "country", catalog = "")
 public class Country implements Serializable {
+
     /** The serial version UID. */
     private static final long serialVersionUID = 1L;
     /** The country identifier. */
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
     /** The country name. */

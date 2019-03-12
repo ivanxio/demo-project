@@ -47,7 +47,7 @@
 		<postgres.version>9.1-901-1.jdbc4</postgres.version>
 		<findbugs.version>3.0.4</findbugs.version>
 		<checkstyle.version>2.17</checkstyle.version>
-		<jacoco.version>0.7.9</jacoco.version>
+		<jacoco.version>0.8.2</jacoco.version>
 		<model.mapper.version>2.2.0</model.mapper.version>
 	</properties>
 
@@ -173,7 +173,7 @@
 										</limit>
 									</limits>
 									<excludes>
-										<exclude>com.amk.sva.subs.it.movilgate.subs.SubscriptionsMovilgateAdapterApplication*</exclude>
+										<exclude>com.sct.utic.DemoProjectApplication</exclude>
 									</excludes>
 								</rule>
 							</rules>
@@ -187,21 +187,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-scm-plugin</artifactId>
-				<version>1.9.5</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-changelog-plugin</artifactId>
-				<version>2.3</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5.3</version>
 			</plugin>
 		</plugins>
 	</build>

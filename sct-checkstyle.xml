@@ -69,7 +69,7 @@
     <module name="MethodLength"/>
     <module name="MethodLength"/>
     <module name="ParameterNumber">
-      <property name="max" value="10"/>
+      <property name="max" value="15"/>
     </module>
     <module name="OuterTypeNumber"/>
     <module name="MethodCount"/>

@@ -30,6 +30,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "federal_entity")
 public class FederalEntity implements Serializable {
+
     /** The serial version UID. */
     private static final long serialVersionUID = 1L;
     /** The federal entity identifier. */

@@ -1,7 +1,7 @@
 /*
- *      File: Township.java
+ *      File: OrganizationType.java
  *    Author: Ivan Garcia <ivan.garcia@neixar.com.mx>
- *      Date: Mar 06, 2019
+ *      Date: Mar 08, 2019
  * Copyright: Secretaria de Comunicaciones y Transporte. 2019
  */
 package com.sct.utic.repository.entity;
@@ -10,60 +10,56 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
- * The township entity.
+ * The organization type entity.
  *
  * @author Ivan Garcia &lt;ivan.garcia@neixar.com.mx&gt;
  * @version 1.0.0
  * @since 1.0.0
  */
 @Entity
-@Table(name = "township")
-public class Township implements Serializable {
+@Table(name = "organization_type")
+public class OrganizationType implements Serializable {
 
     /** The serial version UID. */
     private static final long serialVersionUID = 1L;
-    /** The township identifier. */
+    /** The organization type identifier. */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
-    /** The township name. */
-    @Column(name = "name", length = 50, nullable = false)
+    /** The organization type name. */
+    @Column(name = "name")
     private String name;
-    /** The township abbreviation name. */
-    @Column(name = "abbreviation", length = 50, nullable = false)
+    /** The abbreviation. */
+    @Column(name = "abbreviation")
     private String abbreviation;
-    /** The entity federal object. */
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "federal_entity_id", nullable = false)
-    private FederalEntity federalEntity;
+    /** Its indicate whether the row is active. */
+    @Column(name = "active")
+    private Boolean active;
 
     /**
-     * Create a new instance of {@link Township}.
+     * Create a new instance of {@link OrganizationType}.
      */
-    public Township() {
+    public OrganizationType() {
     }
 
     /**
-     * Create a new instance of {@link Township}.
+     * Create a new instance of {@link OrganizationType}.
      *
-     * @param name The township name.
-     * @param abbreviation The township abbreviation.
-     * @param federalEntity The federal entity object.
+     * @param name The organization type name.
+     * @param abbreviation The abbreviation.
+     * @param active Its indicate whether the row is active.
      */
-    public Township(final String name, final String abbreviation, final FederalEntity federalEntity) {
+    public OrganizationType(final String name, final String abbreviation, final Boolean active) {
         this.name = name;
         this.abbreviation = abbreviation;
-        this.federalEntity = federalEntity;
+        this.active = active;
     }
 
     /**
@@ -121,21 +117,21 @@ public class Township implements Serializable {
     }
 
     /**
-     * Getter federalEntity.
+     * Getter active.
      *
-     * @return the federalEntity.
+     * @return the active.
      */
-    public FederalEntity getFederalEntity() {
-        return federalEntity;
+    public Boolean getActive() {
+        return active;
     }
 
     /**
-     * Setter federalEntity.
+     * Setter active.
      *
-     * @param federalEntity the federalEntity to set.
+     * @param active the active to set.
      */
-    public void setFederalEntity(final FederalEntity federalEntity) {
-        this.federalEntity = federalEntity;
+    public void setActive(final Boolean active) {
+        this.active = active;
     }
 
     /*
@@ -145,6 +141,6 @@ public class Township implements Serializable {
      */
     @Override
     public String toString() {
-        return String.format("Township [id=%s, name=%s, abbreviation=%s, federalEntity=%s]", id, name, abbreviation, federalEntity);
+        return String.format("OrganizationType [id=%s, name=%s, abbreviation=%s, active=%s]", id, name, abbreviation, active);
     }
 }

@@ -14,9 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sct.utic.repository.entity.Person;
 import com.sct.utic.service.PersonService;
@@ -29,8 +26,7 @@ import com.sct.utic.service.PersonService;
  * @since 1.0.0
  */
 @Controller
-@RequestMapping("/person")
-public class PersonController {
+public class PersonController implements PersonApi {
     /**
      * Class Logger.
      */
@@ -48,15 +44,14 @@ public class PersonController {
     public PersonController() {
     }
 
-    /**
-     * Method used to retrieves person by identifier.
+    /*
+     * (non-Javadoc)
      *
-     * @param id The person identifier.
-     * @return The persons found.
+     * @see com.sct.utic.controller.PersonApi#findById(java.lang.Long)
      */
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<Person> findById(@PathVariable(name = "id", required = true) final Long id) {
-        LOGGER.debug("Retrieves persons list.");
+    @Override
+    public ResponseEntity<Person> findById(final Long id) {
+        LOGGER.debug("Retrieves persons by identifier.");
         ResponseEntity<Person> response;
         try {
             final Optional<Person> person = personService.findById(id);
